@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carta para Luana</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #fff2f2, #fafafa);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #3a1f1f;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    #inicio {
+      height: 100vh;
+      width: 100%;
+      max-width: 700px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #ffeaea;
+      border-radius: 15px;
+      box-shadow: 0 6px 18px rgba(168, 50, 50, 0.3);
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    #inicio h1 {
+      color: #a83232;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+
+    #inicio button {
+      background-color: #a83232;
+      border: none;
+      border-radius: 25px;
+      padding: 15px 35px;
+      font-size: 1.2rem;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    #inicio button:hover {
+      background-color: #7a2424;
+      transform: scale(1.07);
+    }
+
+    #carta {
+      max-width: 700px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+      padding: 40px 30px;
+      margin: 60px 0 40px 0;
+      display: none;
+      position: relative;
+      color: #4a2b2b;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      white-space: pre-wrap;
+      font-family: 'Georgia', serif;
+    }
+
+    #carta::before {
+      content: '📨';
+      font-size: 2.5rem;
+      position: absolute;
+      top: -30px;
+      left: 25px;
+    }
+
+    .assinatura {
+      margin-top: 40px;
+      font-style: italic;
+      font-size: 1.1rem;
+      text-align: right;
+      color: #703438;
+    }
+
+    .emoji-flutuante {
+      position: fixed;
+      bottom: -30px;
+      animation: subir 6s ease-in-out forwards;
+      font-size: 1.4rem;
+      opacity: 0.3;
+      pointer-events: none;
+      z-index: 0;
+      user-select: none;
+    }
+
+    @keyframes subir {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-90vh); opacity: 0; }
+    }
+
+    #fotos {
+      max-width: 700px;
+      margin: 50px auto 80px auto;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    #fotos h2 {
+      color: #a83232;
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    .slider {
+      width: 100%;
+      max-width: 700px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      position: relative;
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      user-select: none;
+    }
+
+    .slider-controls {
+      margin-top: 15px;
+    }
+
+    .slider-controls button {
+      background: #f3bcbc;
+      border: none;
+      padding: 10px 18px;
+      margin: 0 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      color: #4a2a2a;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: background 0.3s ease;
+      user-select: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .slider-controls button:hover {
+      background: #d99292;
+    }
+
+    @media (max-width: 480px) {
+      #inicio h1 {
+        font-size: 1.8rem;
+      }
+
+      #inicio button {
+        padding: 12px 25px;
+        font-size: 1rem;
+      }
+
+      #carta {
+        font-size: 1rem;
+        padding: 30px 20px;
+      }
+
+      #fotos h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <audio id="musicaFundo" src="./audio/music.mp3" preload="auto"></audio>
+  <div id="inicio">
+    <h1>Uma carta para alguem especial🐶</h1>
+    <button onclick="mostrarCarta()">Abrir carta</button>
+  </div>
+
+  <div id="carta">
+Oii Luana!
+
+Nem sei como começar isso... Hoje é seu aniversário né kkkkk. Olha só, mais um ano em que eu tive o privilégio de poder estar junto cntg. 17 anos é coisa pra caramba... Você já é quase uma dinossaura kkkkk!
+
+Enfim, queria, por meio dessa carta virtual, agradecer por te ter na minha vida. Pode não parecer, mas você é muito importante pra mim. Até porque, não é todo mundo que consegue aturar um bobão igual a mim por tanto tempo sem reclamar kkkk. Deve ser porque somos parecidos... Talvez nem tanto, mas talvez seja isso o que nos une.
+
+Eu gostaria de dizer que, pra mim, você é mais do que uma amiga, mais do que minha melhor amiga. Você é uma irmã que, por algum motivo, nasceu de outra mãe. Talvez você seja a única garota pra quem eu vá dizer isso em toda a minha vida kkkkk, então valoriza, chatinha... Até porque, nunca foi só um título. Pra mim, você é única, Luana. Em você, tem certas coisas que são difíceis de explicar... tipo aquele seu jeito leve e bobo de sorrir, que muda o ambiente inteiro e me faz querer sorrir junto, até quando eu não tô no clima pra nada. Enfim, o ponto em que eu queria chegar é: eu tenho sorte por te ter como minha melhor amiga.
+
+Lembro de muitas vezes em que eu passava por momentos difíceis, e foi você quem me ajudou. Sou muito grato por tudo o que você já fez, e ainda faz, por mim.
+
+Eu queria muito poder estar contigo agora, ou então poder te entregar todos os presentes e chocolates do mundo kkkk... Mas nem tudo acontece de acordo com a nossa vontade. Por isso, mesmo não conseguindo entregar o presente que você merece, ou a surpresa que você tanto esperava, eu te envio esta carta como forma de carinho — e também como pedido de desculpas. Saiba que, pra mim, você merece o mundo.
+
+Não sabe como eu fico feliz toda vez que você me manda mensagem, ou quando a gente conversa... A real é que eu não sou carente, muito menos sozinho, mas por algum motivo, o simples fato de estar contigo parece tornar a vida mais leve.
+
+Não sei como você vai interpretar tudo isso kkkk 😅, mas eu queria mesmo era te agradecer e, novamente, te parabenizar por essa nova fase. E olha, não importa a distância, a ocasião ou o raio que for: quero que saiba que eu sempre vou estar aqui. Pra te zoar, jogar na sua cara os seus erros, mas também pra te ouvir e conversar por horas.
+
+Então, acho que falei muito... Não quero que você durma lendo isso. Novamente, parabéns, e muito obrigado por tudo. Você não sabe como é importante pra mim, Caramela.
+
+Um forte abraço,
+
+  <div class="assinatura">— Nycolas</div>
+  </div>
+
+  <div id="fotos">
+    <h2>Algumas fotos juntos📸</h2>
+    <div class="slider">
+      <div class="slide"><img src="./img/1.jpeg" alt="Foto 1"></div>
+      <div class="slide"><img src="./img/2.jpeg" alt="Foto 2"></div>
+      <div class="slide"><img src="./img/3.jpeg" alt="Foto 3"></div>
+      <div class="slide"><img src="./img/4.jpeg" alt="Foto 4"></div>
+      <div class="slide"><img src="./img/5.jpeg" alt="Foto 5"></div>
+      <div class="slide"><img src="./img/6.jpeg" alt="Foto 6"></div>
+      <div class="slide"><img src="./img/7.jpeg" alt="Foto 7"></div>
+      <div class="slide"><img src="./img/8.jpeg" alt="Foto 8"></div>
+      <div class="slide"><img src="./img/9.jpeg" alt="Foto 9"></div>
+    </div>
+    <div class="slider-controls">
+      <button onclick="mudarSlide(-1)">◀</button>
+      <button onclick="mudarSlide(1)">▶</button>
+    </div>
+  </div>
+
+  <script>
+  function mostrarCarta() {
+    const inicio = document.getElementById('inicio');
+    const carta = document.getElementById('carta');
+    const fotos = document.getElementById('fotos');
+    const musica = document.getElementById('musicaFundo');
+
+    inicio.style.display = 'none';
+    fotos.style.display = 'none';
+
+    const textoOriginal = carta.textContent.trim();
+    const container = carta;
+    container.textContent = '';
+    carta.style.display = 'block';
+
+    // Toca música com volume médio
+    musica.volume = 0.1;
+    musica.play().catch(() => {
+      // Caso o navegador bloqueie autoplay, ativa no primeiro clique
+      document.body.addEventListener('click', () => musica.play(), { once: true });
+    });
+
+    let i = 0;
+
+    function digitarProximo() {
+      if (i < textoOriginal.length) {
+        container.textContent += textoOriginal[i];
+
+        let delay = 60;
+        const char = textoOriginal[i];
+
+        if (char === '.') delay = 300;
+        else if (char === ',') delay = 100;
+        else if (char === '?') delay = 300;
+        else if (char === ':') delay = 300;
+        else if (char === '!') delay = 300;
+        i++;
+        setTimeout(digitarProximo, delay);
+      } else {
+        fotos.style.display = 'flex';
+        mostrarSlide(0);
+      }
+    }
+
+    digitarProximo();
+  }
+
+  // emojis flutuantes (🌹 e 🐶)
+  function criarEmoji() {
+    const emoji = document.createElement('div');
+    emoji.classList.add('emoji-flutuante');
+    emoji.textContent = Math.random() < 0.5 ? '🌹' : '🐶';
+    emoji.style.left = Math.random() * 100 + 'vw';
+    emoji.style.fontSize = (1 + Math.random() * 2) + 'rem';
+    emoji.style.animationDuration = (4 + Math.random() * 4) + 's';
+    document.body.appendChild(emoji);
+    setTimeout(() => emoji.remove(), 8000);
+  }
+
+  setInterval(criarEmoji, 800);
+
+  // slider
+  let slideAtual = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function mostrarSlide(n) {
+    slides.forEach(slide => (slide.style.display = 'none'));
+    slideAtual = (n + slides.length) % slides.length;
+    slides[slideAtual].style.display = 'block';
+  }
+
+  function mudarSlide(dir) {
+    mostrarSlide(slideAtual + dir);
+  }
+</script>
+</body>
+</html>
